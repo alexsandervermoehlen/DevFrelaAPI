@@ -32,7 +32,7 @@ public class ProjectViewModel
                 entity.Title,
                 entity.Description,
                 entity.IdClient,
-                entity.IDFreelancer,
+                entity.IdFreelancer,
                 entity.Client.FullName,
                 entity.Freelancer.FullName,
                 entity.TotalCost,

@@ -1,4 +1,5 @@
 using DevFreela.Models;
+using DevFreela.Persistence;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 
@@ -8,9 +9,10 @@ namespace DevFreela.Controllers;
 [Route("api/projects")]
 public class ProjectsController : ControllerBase
 {
-    public ProjectsController()
+    private readonly DevFreelaDbContext _context;
+    public ProjectsController(DevFreelaDbContext context)
     {
-        
+        _context = context;
     }
     
     //GET api/projects?search=crm

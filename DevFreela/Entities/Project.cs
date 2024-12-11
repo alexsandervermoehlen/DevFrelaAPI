@@ -11,7 +11,7 @@ public class Project : BaseEntity
         Title = title;
         Description = description;
         IdClient = idClient;
-        IDFreelancer = idFreelancer;
+        IdFreelancer = idFreelancer;
         TotalCost = totalCost;
 
         Status = ProjectStatusEnum.Created;
@@ -22,7 +22,7 @@ public class Project : BaseEntity
     public string Description { get; private set; }
     public int IdClient { get; private set; }
     public User Client { get; private set; }
-    public int IDFreelancer { get; private set; }
+    public int IdFreelancer { get; private set; }
     public User Freelancer { get; private set; }
     public decimal TotalCost { get; private set; }
     public DateTime? StartedAt { get; private set; }
