@@ -1,5 +1,6 @@
 using DevFreela.Models;
 using DevFreela.Persistence;
+using DevFreela.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 
@@ -17,8 +18,11 @@ public class ProjectsController : ControllerBase
     
     //GET api/projects?search=crm
     [HttpGet]
-    public IActionResult Get(string search)
+    public IActionResult Get(string search = "")
     {
+        var projects = _context.Projects.Where(p => !p.IsDeleted).ToList();
+
+        var model = projects.Select(p => new ProjectItemViewModel.FromEntity(p));
         return Ok();
     }
     
