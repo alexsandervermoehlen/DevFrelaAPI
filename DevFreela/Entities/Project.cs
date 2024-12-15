@@ -6,7 +6,7 @@ public class Project : BaseEntity
 {
     protected Project() {}
     
-    protected Project(string title, string description, int idClient, int idFreelancer, decimal totalCost) : base()
+    public Project(string title, string description, int idClient, int idFreelancer, decimal totalCost) : base()
     {
         Title = title;
         Description = description;

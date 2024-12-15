@@ -27,7 +27,7 @@ public class ProjectViewModel
     public decimal TotalCost { get; private set; }
     public List<string> Comments { get; private set; }
 
-    public static ProjectViewModel FromProject(Project entity)
+    public static ProjectViewModel FromEntity(Project entity)
         => new (entity.Id,
                 entity.Title,
                 entity.Description,
