@@ -33,7 +33,7 @@ public class UsersController : ControllerBase
 
         var model = UserViewModel.FromEntity(user);
         
-        return Ok();
+        return Ok(model);
     }
     
     [HttpPost]
