@@ -2,6 +2,11 @@ using DevFreela.ExceptionHandler;
 using DevFreela.Models;
 using DevFreela.Persistence;
 using Microsoft.EntityFrameworkCore;
+using System.Globalization;
+
+// var cultureInfo = new CultureInfo("en-US");
+// CultureInfo.DefaultThreadCurrentCulture = cultureInfo;
+// CultureInfo.DefaultThreadCurrentUICulture = cultureInfo;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,7 +19,8 @@ builder.Services.Configure<FreelanceTotalCostConfig>(
 // builder.Services.AddDbContext<DevFreelaDbContext>(o => o.UseInMemoryDatabase("DevFreelaDb"));
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
-builder.Services.AddDbContext<DevFreelaDbContext>(o => o.UseSqlServer(connectionString));
+builder.Services.AddDbContext<DevFreelaDbContext>(o => 
+    o.UseSqlServer(connectionString));
 
 builder.Services.AddExceptionHandler<ApiExceptionHandler>();
 builder.Services.AddProblemDetails();
