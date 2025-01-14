@@ -1,3 +1,5 @@
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace DevFreela.Models;
 
 public class UpdateProjectInputModel
@@ -8,5 +10,6 @@ public class UpdateProjectInputModel
     
     public string  Description { get; set; }
     
+    [Column(TypeName = "decimal(18,2)")]
     public decimal TotalCost { get; set; }
 }

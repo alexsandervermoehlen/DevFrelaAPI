@@ -1,3 +1,4 @@
+using System.ComponentModel.DataAnnotations.Schema;
 using DevFreela.Entities;
 
 
@@ -25,6 +26,7 @@ namespace DevFreela.Models
         public string Title { get; private set; }
         public string ClientName { get; private set; }
         public string FreelancerName { get; private set; }
+        [Column(TypeName = "decimal(18,2)")]
         public decimal TotalCost { get; private set; }
 
 

@@ -1,3 +1,4 @@
+using System.ComponentModel.DataAnnotations.Schema;
 using DevFreela.Entities;
 
 namespace DevFreela.Models;
@@ -12,6 +13,7 @@ public class CreateProjectInputModel
     
     public int IdFreelancer { get; set; }
     
+    [Column(TypeName = "decimal(18,2)")]
     public decimal TotalCost { get; set; }
     
     public Project ToEntity()
